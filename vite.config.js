@@ -29,8 +29,8 @@ function obtenerHtmlFiles() {
 }
 
 export default defineConfig({
-    appType: "mpa",
-    base: base_path,
+    aappType: "mpa",
+    base: "/portafolio-vite/", 
     build: {
         minify: true,
         cssMinify: true,
