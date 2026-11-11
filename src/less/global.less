@@ -1,0 +1,74 @@
+:root {
+    --ink: @ink;
+    --paper: @paper;
+    --amber: @amber;
+    --teal: @teal;
+    --line: rgba(246, 242, 233, 0.14);
+
+    --bg: var(--ink);
+    --fg: var(--paper);
+    --muted: rgba(246, 242, 233, 0.68);
+    --surface: #1f2330;
+
+    --font-display: @font-display;
+    --font-body: @font-body;
+    --max-width: @max-width;
+}
+
+[data-theme="light"] {
+    --bg: var(--paper);
+    --fg: var(--ink);
+    --muted: rgba(23, 26, 35, 0.65);
+    --surface: #ffffff;
+    --line: rgba(23, 26, 35, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    margin: 0 0 0.6em;
+}
+
+h2 {
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+}
+
+p {
+    margin: 0 0 1em;
+    max-width: 65ch;
+}
+
+a {
+    color: inherit;
+}
+
+section {
+    padding: 5rem 1.5rem;
+    max-width: var(--max-width);
+    .margin-center();
+}
+
+.accent {
+    color: var(--amber);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}

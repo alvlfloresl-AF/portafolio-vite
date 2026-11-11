@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alvaro Flores · Portafolio</title>
+    <meta name="description" content="Portafolio de proyectos de Alvaro Flores, desarrollador web.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/less/style.less" />
+    <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+
+    {{>Header}}
+
+    <main>
+
+        <section class="hero" id="inicio">
+            <div class="hero-text">
+                <p class="eyebrow">Desarrollador web</p>
+                <h1>Hola, soy <span class="accent">Alvaro Flores</span>.<br>Construyo interfaces web claras y funcionales.</h1>
+                <p class="hero-lead">
+                    Estudiante de desarrollo web enfocado en HTML, CSS y JavaScript.
+                    Aquí reúno los proyectos que he construido mientras aprendo a
+                    resolver problemas reales con código.
+                </p>
+                <div class="hero-actions">
+                    <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+                    <a href="#contacto" class="btn btn-ghost">Contactarme</a>
+                </div>
+            </div>
+            <div class="hero-photo">
+                <img src="/src/assets/imagenes/me.png" alt="Foto de perfil de Alvaro Flores" id="profilePhoto">
+            </div>
+        </section>
+
+        <section class="bio" id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <div class="bio-content">
+                <p>
+                    Soy estudiante de Ingeniería en Ciencias de la Computación en UNICAH.
+                    Me interesa el desarrollo front-end: cómo se estructura una página,
+                    cómo se le da estilo y cómo se le da comportamiento con JavaScript.
+                    Este portafolio reúne los proyectos que he ido construyendo en el
+                    proceso de aprender.
+                </p>
+                <ul class="skills">
+                    {{#each habilidades}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+
+        <section class="proyectos" id="proyectos">
+            <h2>Proyectos</h2>
+
+            <div class="carousel" id="carruselProyectos">
+                <div class="track">
+                    {{#each proyectos}}
+                        {{>ProjectSlide}}
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <section class="contacto" id="contacto">
+            <h2>Contacto</h2>
+            <div class="contacto-content">
+                <div class="contacto-info">
+                    <p>¿Quieres platicar de un proyecto o una oportunidad? Escríbeme.</p>
+                    <ul class="contact-list">
+                        <li>📧 <a href="mailto:alvaro.lflores89@gmail.com">alvaro.lflores89@gmail.com</a></li>
+                        <li>💼 <a href="https://www.linkedin.com/in/alv-flors" target="_blank" rel="noopener">linkedin.com/in/alv-flors</a></li>
+                        <li>💻 <a href="https://github.com/badflok" target="_blank" rel="noopener">github.com/badflok</a></li>
+                    </ul>
+                </div>
+
+                <form id="contactForm" class="contact-form" novalidate>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required minlength="2">
+
+                    <label for="email">Correo</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required minlength="10"></textarea>
+
+                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    {{>Footer}}
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+.contacto-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+
+    @media (max-width: @breaks[tablet]) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-list {
+    .reset-list();
+    display: grid;
+    gap: 0.7rem;
+
+    a {
+        text-decoration: none;
+        color: var(--muted);
+
+        &:hover {
+            color: var(--amber);
+        }
+    }
+}
+
+.contact-form {
+    display: grid;
+    gap: 0.4rem;
+
+    label {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 0.6rem;
+    }
+
+    input,
+    textarea {
+        background-color: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 3px;
+        padding: 0.6rem 0.7rem;
+        color: var(--fg);
+        font-family: var(--font-body);
+
+        &:invalid:not(:placeholder-shown) {
+            border-color: @error;
+        }
+    }
+
+    button {
+        margin-top: 1rem;
+        justify-self: start;
+    }
+}
+
+.form-status {
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    color: var(--teal);
+}
