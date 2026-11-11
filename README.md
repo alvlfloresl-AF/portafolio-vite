@@ -17,5 +17,5 @@ Portafolio hecho con **Vite** (web bundler) + **LESS** (CSS generado) + **Handle
 - `.github/workflows/publicar_a_gp.yml` — despliegue automático a GitHub Pages al hacer push a `main`.
 
 ## Enlaces del proyecto
-- Repositorio: https://github.com/alvlfloresl-AF/portafolio
-- Portafolio desplegado (GitHub Pages): https://alvlfloresl-af.github.io/portafolio/
+- Repositorio: https://github.com/alvlfloresl-AF/portafolio-vite
+- Portafolio desplegado (GitHub Pages): https://alvlfloresl-AF.github.io/portafolio-vite/
