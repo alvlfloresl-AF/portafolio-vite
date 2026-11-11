@@ -7,8 +7,6 @@ import getPageContext from "./src/data/index.js";
 
 const __dirname = import.meta.dirname;
 
-const base_path = import.meta.env?.BASE_URL ?? "";
-
 function obtenerHtmlFiles() {
     return Object.fromEntries(
         glob.sync(
@@ -29,8 +27,8 @@ function obtenerHtmlFiles() {
 }
 
 export default defineConfig({
-    aappType: "mpa",
-    base: "/portafolio-vite/", 
+    appType: "mpa",
+    base: "/portafolio-vite/",
     build: {
         minify: true,
         cssMinify: true,
